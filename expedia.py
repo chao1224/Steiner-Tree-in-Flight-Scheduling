@@ -132,7 +132,6 @@ def extractCityInfo():
 	citySocre["Seattle"] = 73
 	citySocre["Madison"] = 48
 
-	'''
 	with open("locations.csv", "wb") as outcsv:
 		writer = csv.writer(outcsv)
 		writer.writerow(["city", "airport", "latitude", "longitude", "score"])
@@ -142,15 +141,14 @@ def extractCityInfo():
 			airport = airportList[i]
 			# API query
 			url = "http://maps.googleapis.com/maps/api/geocode/json?address=airport+" + airport
-			print url
+			# print url
 			js = json.loads(session.get(url).text)
-			print js
+			# print js
 			tempList = [city, airport]
 			tempList.append(js["results"][0]["geometry"]["location"]["lat"])
 			tempList.append(js["results"][0]["geometry"]["location"]["lng"])
 			tempList.append(citySocre[city])
 			writer.writerow(tempList)
-	'''
 
 def init():
     global apikey, session, baseURL, departureDate, totalDay, cityList, maxFlightBetweenTwoCity, attributes

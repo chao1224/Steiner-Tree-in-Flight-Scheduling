@@ -151,10 +151,7 @@ Chengdu CTU CTU
 Chetumal CTM CTM
 Chevak VAK VAK
 Chiang Mai CNX CNX
-Chicago CHI CHI
-Chicago, Merill C. Meigs CHI CGX
-Chicago, Midway CHI MDW
-Chicago, O'Hare CHI ORD
+Chicago CHI ORD
 Chichenitza CZA CZA
 Chiclayo CIX CIX
 Chico CIC CIC
