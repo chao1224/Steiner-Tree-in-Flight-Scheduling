@@ -7,8 +7,8 @@ def calDate(departureDate, day):
 
 def calculateComfort(info):
 	score_numOfSegments = 1.0 / info["numOfSegments"]
-	score_totalFlightHours = max(0, 1.0 - info["totalFlightHours"] / 10.0)
-	info["flight_comfort"] = (score_numOfSegments + score_totalFlightHours) / 2
+	score_totalFlightHours = max(0, 1.0 - math.exp(-4 + 0.5 * info["totalFlightHours"]))
+	info["flight_comfort"] = 50 * score_numOfSegments + 50 * score_totalFlightHours
 
 def queryFlight(departureAirport, resultList, slot):
 	global apikey, session, baseURL, departureDate, totalDay, airportList, maxFlightBetweenTwoCity, city_to_code_dict, code_to_city_dict
